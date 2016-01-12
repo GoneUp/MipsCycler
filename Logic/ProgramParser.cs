@@ -1,14 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Text.RegularExpressions;
-using System.Threading.Tasks;
 using MipsCounter.Commands;
 using MipsCounter.Commands.Base;
 using MipsCounter.Formats;
+using MipsCounter.Formats.I;
+using MipsCounter.Formats.J;
+using MipsCounter.Formats.R;
 
-namespace MipsCounter
+namespace MipsCounter.Logic
 {
     class ProgramParser
     {

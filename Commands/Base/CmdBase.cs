@@ -15,11 +15,14 @@ namespace MipsCounter.Commands.Base
             opcode = opc;
         }
 
+     
+
         public override string ToString()
         {
             return "Opcode: " + opcode;
         }
 
         public abstract void execute();
+        public abstract List<byte> getSourceRegisters();
     }
 }

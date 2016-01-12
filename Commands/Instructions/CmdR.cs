@@ -1,10 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using MipsCounter.Commands.Base;
 
-namespace MipsCounter.Commands.Base
+namespace MipsCounter.Commands.Instructions
 {
     class CmdR : CmdBase
     {
@@ -26,6 +24,11 @@ namespace MipsCounter.Commands.Base
         public override void execute()
         {
             throw new NotImplementedException();
+        }
+
+        public override List<byte> getSourceRegisters()
+        {
+            return new List<byte>(new Byte[]{rs, rt, rd});
         }
     }
 }

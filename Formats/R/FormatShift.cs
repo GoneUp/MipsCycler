@@ -1,12 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using MipsCounter.Commands;
 using MipsCounter.Commands.Base;
+using MipsCounter.Commands.Instructions;
 
-namespace MipsCounter.Formats
+namespace MipsCounter.Formats.R
 {
     class FormatShift : ICmdFormatter
     {

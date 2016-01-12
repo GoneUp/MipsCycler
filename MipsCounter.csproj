@@ -44,6 +44,8 @@
   <ItemGroup>
     <Compile Include="Commands\Base\CmdBase.cs" />
     <Compile Include="Commands\CmdInfo.cs" />
+    <Compile Include="Commands\Instructions\CmdBranch.cs" />
+    <Compile Include="Commands\Instructions\CmdBubble.cs" />
     <Compile Include="Commands\Instructions\CmdI.cs" />
     <Compile Include="Commands\Instructions\CmdJ.cs" />
     <Compile Include="Commands\Instructions\CmdR.cs" />
@@ -57,8 +59,9 @@
     <Compile Include="Formats\R\FormatShift.cs" />
     <Compile Include="Formats\ICmdFormatter.cs" />
     <Compile Include="Formats\Register.cs" />
+    <Compile Include="Logic\Counter.cs" />
     <Compile Include="Program.cs" />
-    <Compile Include="ProgramParser.cs" />
+    <Compile Include="Logic\ProgramParser.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

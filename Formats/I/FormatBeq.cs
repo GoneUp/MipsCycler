@@ -1,12 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using MipsCounter.Commands;
+﻿using MipsCounter.Commands;
 using MipsCounter.Commands.Base;
+using MipsCounter.Commands.Instructions;
 
-namespace MipsCounter.Formats
+namespace MipsCounter.Formats.I
 {
     class FormatBeq : ICmdFormatter
     {
@@ -21,9 +17,9 @@ namespace MipsCounter.Formats
             var regSplit = split[1].Split(',');
             int rd = Register.Translate(regSplit[0]);
             int rs = Register.Translate(regSplit[1]);
-            string label = regSplit[2]; 
+            string label = regSplit[2];
 
-            CmdI cmd = new CmdI(info.opcode, (byte)rs, (byte)rd, 0);
+            CmdI cmd = new CmdBranch(info.opcode, (byte)rs, (byte)rd, label);
             return cmd;
         }
     }
