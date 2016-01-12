@@ -15,6 +15,12 @@ namespace MipsCounter.Commands.Base
             jumpAdress = address;
         }
 
+        public override string ToString()
+        {
+            return String.Format("CmdJ jump {0}; {1}", jumpAdress, base.ToString());
+        }
+
+
         public override void execute()
         {
             throw new NotImplementedException();

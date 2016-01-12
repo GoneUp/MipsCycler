@@ -12,25 +12,7 @@ namespace MipsCounter.Commands
     class CommandList
     {
         //Name --> FormatInfo
-
-        public class FormatInfo
-        {
-            public string name, meaning;
-            public CmdType type;
-            public byte opcode, funct;
-
-            public FormatInfo(string name, string meaning, CmdType type, byte opcode, byte funct)
-            {
-                this.name = name;
-                this.meaning = meaning;
-                this.type = type;
-                this.opcode = opcode;
-                this.funct = funct;
-            }
-        }
-
-
-        private static List<FormatInfo> cmdList  = new List<FormatInfo>();
+        private static List<CmdInfo> cmdList  = new List<CmdInfo>();
 
         public static void Init()
         {
@@ -52,13 +34,13 @@ namespace MipsCounter.Commands
                         throw new Exception("WTF FORMAT");
                     }
 
-
-                    cmdList.Add(new FormatInfo(split[0], split[1], typ, Convert.ToByte(split[3]), Convert.ToByte(split[4])));
+                    if (split[4] == "NA") split[4] = "0xFF";
+                    cmdList.Add(new CmdInfo(split[0], split[1], typ, Convert.ToByte(split[3], 16), Convert.ToByte(split[4], 16)));
                 }
             }
         }
 
-        public static FormatInfo GetInfo(string name)
+        public static CmdInfo GetInfo(string name)
         {
             return cmdList.FirstOrDefault(element => element.name == name);
         }

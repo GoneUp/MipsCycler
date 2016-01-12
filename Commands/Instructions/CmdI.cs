@@ -18,6 +18,11 @@ namespace MipsCounter.Commands.Base
             this.immediate = im;
         }
 
+        public override string ToString()
+        {
+            return String.Format("CmdI rs {0}, rd {1}, immediate {2}; {3}", rs, rd, immediate, base.ToString());
+        }
+
         public override void execute()
         {
             throw new NotImplementedException();

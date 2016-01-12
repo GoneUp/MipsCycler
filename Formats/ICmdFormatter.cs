@@ -12,6 +12,6 @@ namespace MipsCounter.Formats
 {
     interface ICmdFormatter
     {
-        CmdBase GetCmd(string instruction, CommandList.FormatInfo info);
+        CmdBase GetCmd(string instruction, CmdInfo info);
     }
 }

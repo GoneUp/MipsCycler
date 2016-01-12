@@ -18,6 +18,10 @@ namespace MipsCounter.Commands.Base
             this.shift = shift;
             this.funct = funct;
         }
+        public override string ToString()
+        {
+            return String.Format("CmdR rs {0}, rt {1}, rd {2}, shift {3}, shamt {4}; {5}", rs, rt, rd, shift, funct, base.ToString());
+        }
 
         public override void execute()
         {
