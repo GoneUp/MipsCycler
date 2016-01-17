@@ -24,36 +24,20 @@ namespace MipsCounter.Logic
 
             int cycle = 0;
             while (instructions.Count != 0 || stages.Count > 0)
-            {
+            {       
                 cycle++;
+                if (perCycleOutput) printStages(stages, cycle - 1);
 
                 if (stages.Count > 5 || instructions.Count == 0) 
                     stages.Dequeue(); //remove last wb stage
                 if (stages.Count > 5) 
                     continue; //bubbels
 
-                if (perCycleOutput) printStages(stages, cycle);
-                if (instructions.Count == 0) continue;
+                if (instructions.Count == 0) continue; //skip enqueue part
 
                 CmdBase nextCmd = instructions.Pop();
-                if (nextCmd is CmdBranch)
-                {
-                    //branch penalty
-                    for (int i = 0; i < branchBubbels; i++)
-                    {
-                        stages.Enqueue(new CmdBubble());
-                    }
-                } 
-                else if (nextCmd is CmdJ)
-                {
-                    //Jump penealty
-                    for (int i = 0; i < jumpBubbels; i++)
-                    {
-                        stages.Enqueue(new CmdBubble());
-                    }
-                }
-
-                //Data Hazards
+               
+                //Data Hazards, let our cmd WAIT if we need from a cmd before
                 var array = stages.ToArray();
                 var usedRegs = new List<byte>();
                 if (stages.Count > 0) usedRegs = array[stages.Count - 1].getSourceRegisters();
@@ -67,11 +51,29 @@ namespace MipsCounter.Logic
                     //hazard dete
                     for (int i = 0; i < hazardBubbels; i++)
                     {
-                        stages.Enqueue(new CmdBubble());
+                        stages.Enqueue(new CmdBubble(""));
                     }
                 }
 
                 stages.Enqueue(nextCmd);
+
+                //let the next instruction AFTER our wait
+                if (nextCmd is CmdBranch && instructions.Count > 0)
+                {
+                    //branch penalty
+                    for (int i = 0; i < branchBubbels; i++)
+                    {
+                        stages.Enqueue(new CmdBubble(""));
+                    }
+                }
+                else if (nextCmd is CmdJ && instructions.Count > 0)
+                {
+                    //Jump penealty
+                    for (int i = 0; i < jumpBubbels; i++)
+                    {
+                        stages.Enqueue(new CmdBubble(""));
+                    }
+                }
             }
 
 
@@ -88,6 +90,24 @@ namespace MipsCounter.Logic
             {
                 Console.WriteLine(cmdBase.ToString());
             }
+        }
+
+        public static void PerTypeStats(List<CmdBase> cmds)
+        {
+            int cmdI = 0;
+            int cmdR = 0;
+            int cmdJ = 0;
+            int cmdBranch = 0;
+            foreach (var cmd in cmds)
+            {
+                if (cmd is CmdBranch) cmdBranch++;
+                if (cmd is CmdI) cmdI++;
+                if (cmd is CmdR) cmdR++;
+                if (cmd is CmdJ) cmdJ++;
+            }
+
+            Console.WriteLine("=======================");
+            Console.WriteLine("cmdI: {0}, cmdR: {1}, cmdJ: {2}, cmdBranch: {3}", cmdI, cmdR, cmdJ, cmdBranch);
         }
     }
 }

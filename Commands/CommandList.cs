@@ -44,5 +44,10 @@ namespace MipsCounter.Commands
         {
             return cmdList.FirstOrDefault(element => element.name == name);
         }
+
+        public static CmdInfo GetInfo(int opcode)
+        {
+            return cmdList.FirstOrDefault(element => element.opcode == opcode);
+        }
     }
 }

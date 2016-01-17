@@ -36,3 +36,6 @@ sra;Arithmetic Shift Right (sign-extended);R;0x00;0x03
 sub;Subtract;R;0x00;0x22
 subu;Unsigned Subtract;R;0x00;0x23
 sw;Store Word;I;0x2B;NA
+
+la;Load Address PSEUDO;I;0x00;NA
+

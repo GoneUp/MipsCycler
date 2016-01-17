@@ -1,0 +1,480 @@
+Parsed! CmdR rs 0, rt 19, rd 11, shift 2, shamt 0; Opcode: 0
+Parsed! CmdR rs 11, rt 16, rd 15, shift 0, shamt 32; Opcode: 0
+Parsed! CmdBranch lbl end; CmdI rs 15, rd 16, immediate 0; Opcode: 4
+Parsed! CmdI rs 17, rd 9, immediate 0; Opcode: 35
+Parsed! CmdI rs 18, rd 10, immediate 0; Opcode: 35
+Parsed! CmdR rs 9, rt 10, rd 11, shift 0, shamt 42; Opcode: 0
+Parsed! CmdBranch lbl nimm2; CmdI rs 0, rd 11, immediate 0; Opcode: 5
+Parsed! CmdI rs 16, rd 9, immediate 0; Opcode: 43
+Parsed! CmdJ jump 0; Opcode: 2
+Parsed! CmdI rs 16, rd 16, immediate 4; Opcode: 8
+Parsed! CmdI rs 17, rd 17, immediate 4; Opcode: 8
+Parsed! CmdI rs 18, rd 18, immediate 4; Opcode: 8
+Parsed! CmdJ jump 0; Opcode: 2
+Parsed! CmdBranch lbl end; CmdI rs 15, rd 16, immediate 0; Opcode: 4
+Parsed! CmdI rs 17, rd 9, immediate 0; Opcode: 35
+Parsed! CmdI rs 18, rd 10, immediate 0; Opcode: 35
+Parsed! CmdR rs 9, rt 10, rd 11, shift 0, shamt 42; Opcode: 0
+Parsed! CmdBranch lbl nimm2; CmdI rs 0, rd 11, immediate 0; Opcode: 5
+Parsed! CmdI rs 16, rd 10, immediate 0; Opcode: 43
+Parsed! CmdI rs 16, rd 16, immediate 4; Opcode: 8
+Parsed! CmdI rs 17, rd 17, immediate 4; Opcode: 8
+Parsed! CmdI rs 18, rd 18, immediate 4; Opcode: 8
+Parsed! CmdJ jump 0; Opcode: 2
+Parsed! CmdBranch lbl end; CmdI rs 15, rd 16, immediate 0; Opcode: 4
+Parsed! CmdI rs 17, rd 9, immediate 0; Opcode: 35
+Parsed! CmdI rs 18, rd 10, immediate 0; Opcode: 35
+Parsed! CmdR rs 9, rt 10, rd 11, shift 0, shamt 42; Opcode: 0
+Parsed! CmdBranch lbl nimm2; CmdI rs 0, rd 11, immediate 0; Opcode: 5
+Parsed! CmdI rs 16, rd 10, immediate 0; Opcode: 43
+Parsed! CmdI rs 16, rd 16, immediate 4; Opcode: 8
+Parsed! CmdI rs 17, rd 17, immediate 4; Opcode: 8
+Parsed! CmdI rs 18, rd 18, immediate 4; Opcode: 8
+Parsed! CmdJ jump 0; Opcode: 2
+Parsed! CmdBranch lbl end; CmdI rs 15, rd 16, immediate 0; Opcode: 4
+=======================
+cmdI: 25, cmdR: 5, cmdJ: 4, cmdBranch: 7
+Starting Counter
+=======================
+Cycle: 1
+=======================
+Cycle: 2
+CmdR rs 0, rt 19, rd 11, shift 2, shamt 0; Opcode: 0
+=======================
+Cycle: 3
+CmdR rs 11, rt 16, rd 15, shift 0, shamt 32; Opcode: 0
+CmdBubble
+CmdBubble
+CmdR rs 0, rt 19, rd 11, shift 2, shamt 0; Opcode: 0
+=======================
+Cycle: 4
+CmdBranch lbl end; CmdI rs 15, rd 16, immediate 0; Opcode: 4
+CmdBubble
+CmdR rs 11, rt 16, rd 15, shift 0, shamt 32; Opcode: 0
+CmdBubble
+CmdBubble
+CmdR rs 0, rt 19, rd 11, shift 2, shamt 0; Opcode: 0
+=======================
+Cycle: 5
+CmdI rs 17, rd 9, immediate 0; Opcode: 35
+CmdBranch lbl end; CmdI rs 15, rd 16, immediate 0; Opcode: 4
+CmdBubble
+CmdR rs 11, rt 16, rd 15, shift 0, shamt 32; Opcode: 0
+CmdBubble
+CmdBubble
+=======================
+Cycle: 6
+CmdI rs 18, rd 10, immediate 0; Opcode: 35
+CmdI rs 17, rd 9, immediate 0; Opcode: 35
+CmdBranch lbl end; CmdI rs 15, rd 16, immediate 0; Opcode: 4
+CmdBubble
+CmdR rs 11, rt 16, rd 15, shift 0, shamt 32; Opcode: 0
+CmdBubble
+=======================
+Cycle: 7
+CmdR rs 9, rt 10, rd 11, shift 0, shamt 42; Opcode: 0
+CmdBubble
+CmdBubble
+CmdI rs 18, rd 10, immediate 0; Opcode: 35
+CmdI rs 17, rd 9, immediate 0; Opcode: 35
+CmdBranch lbl end; CmdI rs 15, rd 16, immediate 0; Opcode: 4
+CmdBubble
+CmdR rs 11, rt 16, rd 15, shift 0, shamt 32; Opcode: 0
+=======================
+Cycle: 8
+CmdR rs 9, rt 10, rd 11, shift 0, shamt 42; Opcode: 0
+CmdBubble
+CmdBubble
+CmdI rs 18, rd 10, immediate 0; Opcode: 35
+CmdI rs 17, rd 9, immediate 0; Opcode: 35
+CmdBranch lbl end; CmdI rs 15, rd 16, immediate 0; Opcode: 4
+CmdBubble
+=======================
+Cycle: 9
+CmdR rs 9, rt 10, rd 11, shift 0, shamt 42; Opcode: 0
+CmdBubble
+CmdBubble
+CmdI rs 18, rd 10, immediate 0; Opcode: 35
+CmdI rs 17, rd 9, immediate 0; Opcode: 35
+CmdBranch lbl end; CmdI rs 15, rd 16, immediate 0; Opcode: 4
+=======================
+Cycle: 10
+CmdBranch lbl nimm2; CmdI rs 0, rd 11, immediate 0; Opcode: 5
+CmdBubble
+CmdR rs 9, rt 10, rd 11, shift 0, shamt 42; Opcode: 0
+CmdBubble
+CmdBubble
+CmdI rs 18, rd 10, immediate 0; Opcode: 35
+CmdI rs 17, rd 9, immediate 0; Opcode: 35
+=======================
+Cycle: 11
+CmdBranch lbl nimm2; CmdI rs 0, rd 11, immediate 0; Opcode: 5
+CmdBubble
+CmdR rs 9, rt 10, rd 11, shift 0, shamt 42; Opcode: 0
+CmdBubble
+CmdBubble
+CmdI rs 18, rd 10, immediate 0; Opcode: 35
+=======================
+Cycle: 12
+CmdI rs 16, rd 9, immediate 0; Opcode: 43
+CmdBranch lbl nimm2; CmdI rs 0, rd 11, immediate 0; Opcode: 5
+CmdBubble
+CmdR rs 9, rt 10, rd 11, shift 0, shamt 42; Opcode: 0
+CmdBubble
+CmdBubble
+=======================
+Cycle: 13
+CmdJ jump 0; Opcode: 2
+CmdI rs 16, rd 9, immediate 0; Opcode: 43
+CmdBranch lbl nimm2; CmdI rs 0, rd 11, immediate 0; Opcode: 5
+CmdBubble
+CmdR rs 9, rt 10, rd 11, shift 0, shamt 42; Opcode: 0
+CmdBubble
+=======================
+Cycle: 14
+CmdI rs 16, rd 16, immediate 4; Opcode: 8
+CmdJ jump 0; Opcode: 2
+CmdI rs 16, rd 9, immediate 0; Opcode: 43
+CmdBranch lbl nimm2; CmdI rs 0, rd 11, immediate 0; Opcode: 5
+CmdBubble
+CmdR rs 9, rt 10, rd 11, shift 0, shamt 42; Opcode: 0
+=======================
+Cycle: 15
+CmdI rs 17, rd 17, immediate 4; Opcode: 8
+CmdI rs 16, rd 16, immediate 4; Opcode: 8
+CmdJ jump 0; Opcode: 2
+CmdI rs 16, rd 9, immediate 0; Opcode: 43
+CmdBranch lbl nimm2; CmdI rs 0, rd 11, immediate 0; Opcode: 5
+CmdBubble
+=======================
+Cycle: 16
+CmdI rs 18, rd 18, immediate 4; Opcode: 8
+CmdI rs 17, rd 17, immediate 4; Opcode: 8
+CmdI rs 16, rd 16, immediate 4; Opcode: 8
+CmdJ jump 0; Opcode: 2
+CmdI rs 16, rd 9, immediate 0; Opcode: 43
+CmdBranch lbl nimm2; CmdI rs 0, rd 11, immediate 0; Opcode: 5
+=======================
+Cycle: 17
+CmdJ jump 0; Opcode: 2
+CmdI rs 18, rd 18, immediate 4; Opcode: 8
+CmdI rs 17, rd 17, immediate 4; Opcode: 8
+CmdI rs 16, rd 16, immediate 4; Opcode: 8
+CmdJ jump 0; Opcode: 2
+CmdI rs 16, rd 9, immediate 0; Opcode: 43
+=======================
+Cycle: 18
+CmdBranch lbl end; CmdI rs 15, rd 16, immediate 0; Opcode: 4
+CmdBubble
+CmdJ jump 0; Opcode: 2
+CmdI rs 18, rd 18, immediate 4; Opcode: 8
+CmdI rs 17, rd 17, immediate 4; Opcode: 8
+CmdI rs 16, rd 16, immediate 4; Opcode: 8
+CmdJ jump 0; Opcode: 2
+=======================
+Cycle: 19
+CmdBranch lbl end; CmdI rs 15, rd 16, immediate 0; Opcode: 4
+CmdBubble
+CmdJ jump 0; Opcode: 2
+CmdI rs 18, rd 18, immediate 4; Opcode: 8
+CmdI rs 17, rd 17, immediate 4; Opcode: 8
+CmdI rs 16, rd 16, immediate 4; Opcode: 8
+=======================
+Cycle: 20
+CmdI rs 17, rd 9, immediate 0; Opcode: 35
+CmdBranch lbl end; CmdI rs 15, rd 16, immediate 0; Opcode: 4
+CmdBubble
+CmdJ jump 0; Opcode: 2
+CmdI rs 18, rd 18, immediate 4; Opcode: 8
+CmdI rs 17, rd 17, immediate 4; Opcode: 8
+=======================
+Cycle: 21
+CmdI rs 18, rd 10, immediate 0; Opcode: 35
+CmdI rs 17, rd 9, immediate 0; Opcode: 35
+CmdBranch lbl end; CmdI rs 15, rd 16, immediate 0; Opcode: 4
+CmdBubble
+CmdJ jump 0; Opcode: 2
+CmdI rs 18, rd 18, immediate 4; Opcode: 8
+=======================
+Cycle: 22
+CmdR rs 9, rt 10, rd 11, shift 0, shamt 42; Opcode: 0
+CmdBubble
+CmdBubble
+CmdI rs 18, rd 10, immediate 0; Opcode: 35
+CmdI rs 17, rd 9, immediate 0; Opcode: 35
+CmdBranch lbl end; CmdI rs 15, rd 16, immediate 0; Opcode: 4
+CmdBubble
+CmdJ jump 0; Opcode: 2
+=======================
+Cycle: 23
+CmdR rs 9, rt 10, rd 11, shift 0, shamt 42; Opcode: 0
+CmdBubble
+CmdBubble
+CmdI rs 18, rd 10, immediate 0; Opcode: 35
+CmdI rs 17, rd 9, immediate 0; Opcode: 35
+CmdBranch lbl end; CmdI rs 15, rd 16, immediate 0; Opcode: 4
+CmdBubble
+=======================
+Cycle: 24
+CmdR rs 9, rt 10, rd 11, shift 0, shamt 42; Opcode: 0
+CmdBubble
+CmdBubble
+CmdI rs 18, rd 10, immediate 0; Opcode: 35
+CmdI rs 17, rd 9, immediate 0; Opcode: 35
+CmdBranch lbl end; CmdI rs 15, rd 16, immediate 0; Opcode: 4
+=======================
+Cycle: 25
+CmdBranch lbl nimm2; CmdI rs 0, rd 11, immediate 0; Opcode: 5
+CmdBubble
+CmdR rs 9, rt 10, rd 11, shift 0, shamt 42; Opcode: 0
+CmdBubble
+CmdBubble
+CmdI rs 18, rd 10, immediate 0; Opcode: 35
+CmdI rs 17, rd 9, immediate 0; Opcode: 35
+=======================
+Cycle: 26
+CmdBranch lbl nimm2; CmdI rs 0, rd 11, immediate 0; Opcode: 5
+CmdBubble
+CmdR rs 9, rt 10, rd 11, shift 0, shamt 42; Opcode: 0
+CmdBubble
+CmdBubble
+CmdI rs 18, rd 10, immediate 0; Opcode: 35
+=======================
+Cycle: 27
+CmdI rs 16, rd 10, immediate 0; Opcode: 43
+CmdBranch lbl nimm2; CmdI rs 0, rd 11, immediate 0; Opcode: 5
+CmdBubble
+CmdR rs 9, rt 10, rd 11, shift 0, shamt 42; Opcode: 0
+CmdBubble
+CmdBubble
+=======================
+Cycle: 28
+CmdI rs 16, rd 16, immediate 4; Opcode: 8
+CmdBubble
+CmdBubble
+CmdI rs 16, rd 10, immediate 0; Opcode: 43
+CmdBranch lbl nimm2; CmdI rs 0, rd 11, immediate 0; Opcode: 5
+CmdBubble
+CmdR rs 9, rt 10, rd 11, shift 0, shamt 42; Opcode: 0
+CmdBubble
+=======================
+Cycle: 29
+CmdI rs 16, rd 16, immediate 4; Opcode: 8
+CmdBubble
+CmdBubble
+CmdI rs 16, rd 10, immediate 0; Opcode: 43
+CmdBranch lbl nimm2; CmdI rs 0, rd 11, immediate 0; Opcode: 5
+CmdBubble
+CmdR rs 9, rt 10, rd 11, shift 0, shamt 42; Opcode: 0
+=======================
+Cycle: 30
+CmdI rs 16, rd 16, immediate 4; Opcode: 8
+CmdBubble
+CmdBubble
+CmdI rs 16, rd 10, immediate 0; Opcode: 43
+CmdBranch lbl nimm2; CmdI rs 0, rd 11, immediate 0; Opcode: 5
+CmdBubble
+=======================
+Cycle: 31
+CmdI rs 17, rd 17, immediate 4; Opcode: 8
+CmdI rs 16, rd 16, immediate 4; Opcode: 8
+CmdBubble
+CmdBubble
+CmdI rs 16, rd 10, immediate 0; Opcode: 43
+CmdBranch lbl nimm2; CmdI rs 0, rd 11, immediate 0; Opcode: 5
+=======================
+Cycle: 32
+CmdI rs 18, rd 18, immediate 4; Opcode: 8
+CmdI rs 17, rd 17, immediate 4; Opcode: 8
+CmdI rs 16, rd 16, immediate 4; Opcode: 8
+CmdBubble
+CmdBubble
+CmdI rs 16, rd 10, immediate 0; Opcode: 43
+=======================
+Cycle: 33
+CmdJ jump 0; Opcode: 2
+CmdI rs 18, rd 18, immediate 4; Opcode: 8
+CmdI rs 17, rd 17, immediate 4; Opcode: 8
+CmdI rs 16, rd 16, immediate 4; Opcode: 8
+CmdBubble
+CmdBubble
+=======================
+Cycle: 34
+CmdBranch lbl end; CmdI rs 15, rd 16, immediate 0; Opcode: 4
+CmdBubble
+CmdJ jump 0; Opcode: 2
+CmdI rs 18, rd 18, immediate 4; Opcode: 8
+CmdI rs 17, rd 17, immediate 4; Opcode: 8
+CmdI rs 16, rd 16, immediate 4; Opcode: 8
+CmdBubble
+=======================
+Cycle: 35
+CmdBranch lbl end; CmdI rs 15, rd 16, immediate 0; Opcode: 4
+CmdBubble
+CmdJ jump 0; Opcode: 2
+CmdI rs 18, rd 18, immediate 4; Opcode: 8
+CmdI rs 17, rd 17, immediate 4; Opcode: 8
+CmdI rs 16, rd 16, immediate 4; Opcode: 8
+=======================
+Cycle: 36
+CmdI rs 17, rd 9, immediate 0; Opcode: 35
+CmdBranch lbl end; CmdI rs 15, rd 16, immediate 0; Opcode: 4
+CmdBubble
+CmdJ jump 0; Opcode: 2
+CmdI rs 18, rd 18, immediate 4; Opcode: 8
+CmdI rs 17, rd 17, immediate 4; Opcode: 8
+=======================
+Cycle: 37
+CmdI rs 18, rd 10, immediate 0; Opcode: 35
+CmdI rs 17, rd 9, immediate 0; Opcode: 35
+CmdBranch lbl end; CmdI rs 15, rd 16, immediate 0; Opcode: 4
+CmdBubble
+CmdJ jump 0; Opcode: 2
+CmdI rs 18, rd 18, immediate 4; Opcode: 8
+=======================
+Cycle: 38
+CmdR rs 9, rt 10, rd 11, shift 0, shamt 42; Opcode: 0
+CmdBubble
+CmdBubble
+CmdI rs 18, rd 10, immediate 0; Opcode: 35
+CmdI rs 17, rd 9, immediate 0; Opcode: 35
+CmdBranch lbl end; CmdI rs 15, rd 16, immediate 0; Opcode: 4
+CmdBubble
+CmdJ jump 0; Opcode: 2
+=======================
+Cycle: 39
+CmdR rs 9, rt 10, rd 11, shift 0, shamt 42; Opcode: 0
+CmdBubble
+CmdBubble
+CmdI rs 18, rd 10, immediate 0; Opcode: 35
+CmdI rs 17, rd 9, immediate 0; Opcode: 35
+CmdBranch lbl end; CmdI rs 15, rd 16, immediate 0; Opcode: 4
+CmdBubble
+=======================
+Cycle: 40
+CmdR rs 9, rt 10, rd 11, shift 0, shamt 42; Opcode: 0
+CmdBubble
+CmdBubble
+CmdI rs 18, rd 10, immediate 0; Opcode: 35
+CmdI rs 17, rd 9, immediate 0; Opcode: 35
+CmdBranch lbl end; CmdI rs 15, rd 16, immediate 0; Opcode: 4
+=======================
+Cycle: 41
+CmdBranch lbl nimm2; CmdI rs 0, rd 11, immediate 0; Opcode: 5
+CmdBubble
+CmdR rs 9, rt 10, rd 11, shift 0, shamt 42; Opcode: 0
+CmdBubble
+CmdBubble
+CmdI rs 18, rd 10, immediate 0; Opcode: 35
+CmdI rs 17, rd 9, immediate 0; Opcode: 35
+=======================
+Cycle: 42
+CmdBranch lbl nimm2; CmdI rs 0, rd 11, immediate 0; Opcode: 5
+CmdBubble
+CmdR rs 9, rt 10, rd 11, shift 0, shamt 42; Opcode: 0
+CmdBubble
+CmdBubble
+CmdI rs 18, rd 10, immediate 0; Opcode: 35
+=======================
+Cycle: 43
+CmdI rs 16, rd 10, immediate 0; Opcode: 43
+CmdBranch lbl nimm2; CmdI rs 0, rd 11, immediate 0; Opcode: 5
+CmdBubble
+CmdR rs 9, rt 10, rd 11, shift 0, shamt 42; Opcode: 0
+CmdBubble
+CmdBubble
+=======================
+Cycle: 44
+CmdI rs 16, rd 16, immediate 4; Opcode: 8
+CmdBubble
+CmdBubble
+CmdI rs 16, rd 10, immediate 0; Opcode: 43
+CmdBranch lbl nimm2; CmdI rs 0, rd 11, immediate 0; Opcode: 5
+CmdBubble
+CmdR rs 9, rt 10, rd 11, shift 0, shamt 42; Opcode: 0
+CmdBubble
+=======================
+Cycle: 45
+CmdI rs 16, rd 16, immediate 4; Opcode: 8
+CmdBubble
+CmdBubble
+CmdI rs 16, rd 10, immediate 0; Opcode: 43
+CmdBranch lbl nimm2; CmdI rs 0, rd 11, immediate 0; Opcode: 5
+CmdBubble
+CmdR rs 9, rt 10, rd 11, shift 0, shamt 42; Opcode: 0
+=======================
+Cycle: 46
+CmdI rs 16, rd 16, immediate 4; Opcode: 8
+CmdBubble
+CmdBubble
+CmdI rs 16, rd 10, immediate 0; Opcode: 43
+CmdBranch lbl nimm2; CmdI rs 0, rd 11, immediate 0; Opcode: 5
+CmdBubble
+=======================
+Cycle: 47
+CmdI rs 17, rd 17, immediate 4; Opcode: 8
+CmdI rs 16, rd 16, immediate 4; Opcode: 8
+CmdBubble
+CmdBubble
+CmdI rs 16, rd 10, immediate 0; Opcode: 43
+CmdBranch lbl nimm2; CmdI rs 0, rd 11, immediate 0; Opcode: 5
+=======================
+Cycle: 48
+CmdI rs 18, rd 18, immediate 4; Opcode: 8
+CmdI rs 17, rd 17, immediate 4; Opcode: 8
+CmdI rs 16, rd 16, immediate 4; Opcode: 8
+CmdBubble
+CmdBubble
+CmdI rs 16, rd 10, immediate 0; Opcode: 43
+=======================
+Cycle: 49
+CmdJ jump 0; Opcode: 2
+CmdI rs 18, rd 18, immediate 4; Opcode: 8
+CmdI rs 17, rd 17, immediate 4; Opcode: 8
+CmdI rs 16, rd 16, immediate 4; Opcode: 8
+CmdBubble
+CmdBubble
+=======================
+Cycle: 50
+CmdBranch lbl end; CmdI rs 15, rd 16, immediate 0; Opcode: 4
+CmdBubble
+CmdJ jump 0; Opcode: 2
+CmdI rs 18, rd 18, immediate 4; Opcode: 8
+CmdI rs 17, rd 17, immediate 4; Opcode: 8
+CmdI rs 16, rd 16, immediate 4; Opcode: 8
+CmdBubble
+=======================
+Cycle: 51
+CmdBranch lbl end; CmdI rs 15, rd 16, immediate 0; Opcode: 4
+CmdBubble
+CmdJ jump 0; Opcode: 2
+CmdI rs 18, rd 18, immediate 4; Opcode: 8
+CmdI rs 17, rd 17, immediate 4; Opcode: 8
+CmdI rs 16, rd 16, immediate 4; Opcode: 8
+=======================
+Cycle: 52
+CmdBranch lbl end; CmdI rs 15, rd 16, immediate 0; Opcode: 4
+CmdBubble
+CmdJ jump 0; Opcode: 2
+CmdI rs 18, rd 18, immediate 4; Opcode: 8
+CmdI rs 17, rd 17, immediate 4; Opcode: 8
+=======================
+Cycle: 53
+CmdBranch lbl end; CmdI rs 15, rd 16, immediate 0; Opcode: 4
+CmdBubble
+CmdJ jump 0; Opcode: 2
+CmdI rs 18, rd 18, immediate 4; Opcode: 8
+=======================
+Cycle: 54
+CmdBranch lbl end; CmdI rs 15, rd 16, immediate 0; Opcode: 4
+CmdBubble
+CmdJ jump 0; Opcode: 2
+=======================
+Cycle: 55
+CmdBranch lbl end; CmdI rs 15, rd 16, immediate 0; Opcode: 4
+CmdBubble
+=======================
+Cycle: 56
+CmdBranch lbl end; CmdI rs 15, rd 16, immediate 0; Opcode: 4
+=======================
+Cycle count: 56

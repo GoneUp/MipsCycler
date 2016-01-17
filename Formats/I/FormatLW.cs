@@ -2,12 +2,13 @@
 using MipsCounter.Commands;
 using MipsCounter.Commands.Base;
 using MipsCounter.Commands.Instructions;
+using MipsCounter.Commands.Instructions.I;
 
 namespace MipsCounter.Formats.I
 {
     class FormatLW : ICmdFormatter
     {
-        public CmdBase GetCmd(string instruction, CmdInfo info)
+        public CmdBase GetCmd(string instruction, CmdInfo info, string label)
         {
             //lw $t2,0($s2)
             var split = instruction.Split(' ');
@@ -31,12 +32,12 @@ namespace MipsCounter.Formats.I
                 int rs = Register.Translate(bracket);
 
 
-                return new CmdI(info.opcode, (byte)rs, (byte)rt, (short)value);
+                return new CmdLW(info, (byte)rs, (byte)rt, (short)value,"",  label);
             }
 
             //lw $s3, n		# n in $s3 laden 
             //pseudo instruct
-            return new CmdI(info.opcode, 0, (byte)rt, 0);
+            return new CmdLW(info, 0, (byte)rt, 0, split[2], label);
         }
     }
 }

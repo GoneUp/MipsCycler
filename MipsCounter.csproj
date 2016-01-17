@@ -43,14 +43,24 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Commands\Base\CmdBase.cs" />
+    <Compile Include="Commands\Base\DataBase.cs" />
     <Compile Include="Commands\CmdInfo.cs" />
-    <Compile Include="Commands\Instructions\CmdBranch.cs" />
+    <Compile Include="Commands\Instructions\I\CmdBranch.cs" />
     <Compile Include="Commands\Instructions\CmdBubble.cs" />
     <Compile Include="Commands\Instructions\CmdI.cs" />
     <Compile Include="Commands\Instructions\CmdJ.cs" />
     <Compile Include="Commands\Instructions\CmdR.cs" />
     <Compile Include="Commands\CmdType.cs" />
     <Compile Include="Commands\CommandList.cs" />
+    <Compile Include="Commands\Instructions\I\CmdLW.cs" />
+    <Compile Include="Commands\Instructions\I\CmdAddi.cs" />
+    <Compile Include="Commands\Instructions\R\CmdShift.cs" />
+    <Compile Include="Commands\Instructions\R\CmdAddR.cs" />
+    <Compile Include="Commands\Instructions\R\CmdSlt.cs" />
+    <Compile Include="Execution\Execute.cs" />
+    <Compile Include="Execution\MipsMemory.cs" />
+    <Compile Include="Execution\MipsRegisters.cs" />
+    <Compile Include="Formats\DataFormater.cs" />
     <Compile Include="Formats\I\FormatI.cs" />
     <Compile Include="Formats\I\FormatLW.cs" />
     <Compile Include="Formats\I\FormatBeq.cs" />

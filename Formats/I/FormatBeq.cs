@@ -6,7 +6,7 @@ namespace MipsCounter.Formats.I
 {
     class FormatBeq : ICmdFormatter
     {
-        public CmdBase GetCmd(string instruction, CmdInfo info)
+        public CmdBase GetCmd(string instruction, CmdInfo info, string label)
         {
 
             //generic
@@ -17,9 +17,9 @@ namespace MipsCounter.Formats.I
             var regSplit = split[1].Split(',');
             int rd = Register.Translate(regSplit[0]);
             int rs = Register.Translate(regSplit[1]);
-            string label = regSplit[2];
+            string jumpLabel = regSplit[2];
 
-            CmdI cmd = new CmdBranch(info.opcode, (byte)rs, (byte)rd, label);
+            CmdI cmd = new CmdBranch(info, (byte)rs, (byte)rd, jumpLabel, label);
             return cmd;
         }
     }

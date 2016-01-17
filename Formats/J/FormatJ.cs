@@ -6,10 +6,10 @@ namespace MipsCounter.Formats.J
 {
     class FormatJ : ICmdFormatter
     {
-        public CmdBase GetCmd(string instruction, CmdInfo info)
+        public CmdBase GetCmd(string instruction, CmdInfo info, string label)
         {
             var split = instruction.Split(' ');
-            CmdJ cmd = new CmdJ(info.opcode, 0);
+            CmdJ cmd = new CmdJ(info, split[1], label);
             return cmd;
         }
     }

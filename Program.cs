@@ -15,7 +15,7 @@ namespace MipsCounter
         static void Main(string[] args)
         {
             Console.WriteLine("Mips Cycle Count Parser");
-            Console.WriteLine("Henry Strobel ## github.com//GoneUp\n");
+            Console.WriteLine("Henry Strobel ## github.com/GoneUp\n");
 
             if (args.Length == 0)
             {
@@ -27,19 +27,20 @@ namespace MipsCounter
             }
 
             try
+
             {
                 CommandList.Init();
                 var path = args[0];
                 var lines = File.ReadAllLines(path);
 
-                var cmds = ProgramParser.Translate(lines);
-                cmds.Reverse();
+                ProgramParser.Translate(lines);
+                //ProgramParser.cmds.Reverse();
 
-                Console.WriteLine("Starting Counter");
+
 
                 bool forwarding = false;
                 int hazardBubbels = 2;
-                int jumpBubbels = 1;
+                int jumpBubbels = 0;
                 int branchBubbels = 1;
                 bool proCyOutput = true;
                 if (args.Length == 6)
@@ -51,9 +52,20 @@ namespace MipsCounter
                     proCyOutput = Convert.ToBoolean(args[5]);
                 }
 
-                Counter.Count(new Stack<CmdBase>(cmds), forwarding, hazardBubbels, jumpBubbels, branchBubbels, proCyOutput);
+                 Counter.PerTypeStats(ProgramParser.cmds);
+                Console.WriteLine("Starting Counter");
+                Console.WriteLine("Settings: FWD {0}, HB {1}, JB {2}, BB {3}, DebugOutput {4}", forwarding, hazardBubbels, jumpBubbels, branchBubbels, proCyOutput);
+                ProgramParser.cmds.Reverse();
+                Counter.Count(new Stack<CmdBase>(ProgramParser.cmds), forwarding, hazardBubbels, jumpBubbels, branchBubbels, proCyOutput);
 
 
+                Console.WriteLine("Starting Exec");
+                ProgramParser.cmds.Reverse();
+                Execution.Execute.Exec(ProgramParser.cmds, ProgramParser.dataCmds, proCyOutput, true);
+
+                
+           
+                
             }
             catch (Exception ex)
             {
@@ -61,8 +73,9 @@ namespace MipsCounter
                 Console.WriteLine("Program stopped");
             }
 
-
             Console.Read();
         }
+
+
     }
 }
