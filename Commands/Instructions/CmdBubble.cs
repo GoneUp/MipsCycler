@@ -11,7 +11,7 @@ namespace MipsCounter.Commands.Instructions
     class CmdBubble : CmdBase
     {
         public CmdBubble(string label)
-            : base(new CmdInfo("", "", 0, 0, 0), label)
+            : base(new CmdInfo("", "", 0, 0, 0,""), label)
         {
         }
 

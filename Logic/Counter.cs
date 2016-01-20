@@ -20,7 +20,8 @@ namespace MipsCounter.Logic
              * Stack der die fünf Stages darstellen soll. solange ausführen bis initale Liste leer is, runden zurückgeben
              */
             Queue<CmdBase> stages = new Queue<CmdBase>(); 
-           
+            List<CmdBase> controlHazards = new List<CmdBase>();
+            List<CmdBase> dataHazards = new List<CmdBase>();
 
             int cycle = 0;
             while (instructions.Count != 0 || stages.Count > 0)
@@ -40,7 +41,14 @@ namespace MipsCounter.Logic
                 //Data Hazards, let our cmd WAIT if we need from a cmd before
                 var array = stages.ToArray();
                 var usedRegs = new List<byte>();
-                if (stages.Count > 0) usedRegs = array[stages.Count - 1].getSourceRegisters();
+                if (array.Length > 0)
+                {
+                    usedRegs.AddRange(array[array.Length - 1].getDstRegisters());
+                    if (array.Length > 1)
+                    {
+                        usedRegs.AddRange(array[array.Length - 2].getDstRegisters());
+                    }
+                }
                 var actualRegs = nextCmd.getSourceRegisters();
 
                 bool match = false;
@@ -53,6 +61,7 @@ namespace MipsCounter.Logic
                     {
                         stages.Enqueue(new CmdBubble(""));
                     }
+                    dataHazards.Add(nextCmd);
                 }
 
                 stages.Enqueue(nextCmd);
@@ -65,6 +74,7 @@ namespace MipsCounter.Logic
                     {
                         stages.Enqueue(new CmdBubble(""));
                     }
+                    controlHazards.Add(nextCmd);
                 }
                 else if (nextCmd is CmdJ && instructions.Count > 0)
                 {
@@ -73,22 +83,28 @@ namespace MipsCounter.Logic
                     {
                         stages.Enqueue(new CmdBubble(""));
                     }
+                    controlHazards.Add(nextCmd);
                 }
             }
 
 
+            Console.WriteLine("=======================");
+            Console.WriteLine("Data Hazards: ");
+            dataHazards.ForEach(e => Console.WriteLine("At: " + e));
+            Console.WriteLine("Control Hazards: ");
+            controlHazards.ForEach(e => Console.WriteLine("At: " + e));
             Console.WriteLine("=======================");
             Console.WriteLine("Cycle count: " + cycle);
         }
 
         private static void printStages(Queue<CmdBase> stages, int cycle)
         {
-            var array = stages.ToArray().Reverse();
+            CmdBase[] array = stages.ToArray();
             Console.WriteLine("=======================");
             Console.WriteLine("Cycle: " + cycle);
-            foreach (var cmdBase in array)
+            foreach (CmdBase t in array)
             {
-                Console.WriteLine(cmdBase.ToString());
+                Console.WriteLine(t);
             }
         }
 

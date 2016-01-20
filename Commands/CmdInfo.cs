@@ -12,13 +12,21 @@ namespace MipsCounter.Commands
         public CmdType type;
         public byte opcode, funct;
 
-        public CmdInfo(string name, string meaning, CmdType type, byte opcode, byte funct)
+        public string inputLine;
+
+        public CmdInfo(string name, string meaning, CmdType type, byte opcode, byte funct, string inputLine)
         {
             this.name = name;
             this.meaning = meaning;
             this.type = type;
             this.opcode = opcode;
             this.funct = funct;
+            this.inputLine = inputLine;
+        }
+
+        public CmdInfo Clone()
+        {
+            return new CmdInfo(name, meaning, type, opcode, funct, inputLine);
         }
 
         public override string ToString()

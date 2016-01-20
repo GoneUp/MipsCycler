@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -78,6 +79,25 @@ namespace MipsCounter.Execution
 
             Console.WriteLine("=======================");
             Console.WriteLine("Cycle count: " + cycle);
+
+            if (perCycleOutput)
+            {
+                Console.WriteLine("History Output");
+                StringBuilder sb = new StringBuilder();
+                foreach (var cmdBase in history)
+                {
+                    if (!(cmdBase is CmdBubble))
+                    {
+                        Console.WriteLine(cmdBase);
+                        sb.AppendLine(cmdBase.info.inputLine);
+                    }
+                }
+
+                File.WriteAllText("execution_order.txt", sb.ToString());
+                Console.WriteLine("Wrote the executed commands to the file execution_order.txt");
+            }
+
+           
         }
 
         private static Dictionary<String, int> CreateLinkTable(List<CmdBase> instructions)

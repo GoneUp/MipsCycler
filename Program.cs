@@ -19,19 +19,22 @@ namespace MipsCounter
 
             if (args.Length == 0)
             {
+                Console.WriteLine("Usage for Counter Mode");
                 Console.WriteLine("Usage: PATH");
-                Console.WriteLine("Usage: PATH Forwarding(0/1) HazardBubbels JumpBubbels BranchBubbels perCycleOutput(0/1)");
-                Console.WriteLine("Default: PATH 0 2 1 1 1");
+                Console.WriteLine("Usage: PATH Forwarding(false/true) HazardBubbels JumpBubbels BranchBubbels perCycleOutput(false/true)");
+                Console.WriteLine("Default: PATH 0 2 0 1 1");
+                Console.WriteLine("Usage for Execution Mode");
+                Console.WriteLine("Usage: PATH -EX perCycleOutput(false/true)");
+
                 Console.Read();
                 return;
             }
 
             try
-
             {
                 CommandList.Init();
                 var path = args[0];
-                var lines = File.ReadAllLines(path);
+                var lines = File.ReadAllLines(path, Encoding.Default);
 
                 ProgramParser.Translate(lines);
                 //ProgramParser.cmds.Reverse();
@@ -41,7 +44,7 @@ namespace MipsCounter
                 bool forwarding = false;
                 int hazardBubbels = 2;
                 int jumpBubbels = 0;
-                int branchBubbels = 1;
+                int branchBubbels = 3;
                 bool proCyOutput = true;
                 if (args.Length == 6)
                 {
@@ -52,20 +55,25 @@ namespace MipsCounter
                     proCyOutput = Convert.ToBoolean(args[5]);
                 }
 
-                 Counter.PerTypeStats(ProgramParser.cmds);
-                Console.WriteLine("Starting Counter");
-                Console.WriteLine("Settings: FWD {0}, HB {1}, JB {2}, BB {3}, DebugOutput {4}", forwarding, hazardBubbels, jumpBubbels, branchBubbels, proCyOutput);
-                ProgramParser.cmds.Reverse();
-                Counter.Count(new Stack<CmdBase>(ProgramParser.cmds), forwarding, hazardBubbels, jumpBubbels, branchBubbels, proCyOutput);
 
+                if (args.Length == 3 && args[1] == "-EX")
+                {
+                    proCyOutput = Convert.ToBoolean(args[2]);
 
-                Console.WriteLine("Starting Exec");
-                ProgramParser.cmds.Reverse();
-                Execution.Execute.Exec(ProgramParser.cmds, ProgramParser.dataCmds, proCyOutput, true);
+                    Console.WriteLine("Starting Exec");
+                    Execution.Execute.Exec(ProgramParser.cmds, ProgramParser.dataCmds, proCyOutput, true);
+                }
+                else
+                {
+                    Counter.PerTypeStats(ProgramParser.cmds);
+                    Console.WriteLine("Starting Counter");
+                    Console.WriteLine("Settings: FWD {0}, HB {1}, JB {2}, BB {3}, DebugOutput {4}", 
+                        forwarding, hazardBubbels, jumpBubbels, branchBubbels, proCyOutput);
+                    ProgramParser.cmds.Reverse();
+                    Counter.Count(new Stack<CmdBase>(ProgramParser.cmds), 
+                        forwarding, hazardBubbels, jumpBubbels, branchBubbels, proCyOutput);
+                }
 
-                
-           
-                
             }
             catch (Exception ex)
             {

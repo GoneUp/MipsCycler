@@ -35,19 +35,23 @@ namespace MipsCounter.Commands
                     }
 
                     if (split[4] == "NA") split[4] = "0xFF";
-                    cmdList.Add(new CmdInfo(split[0], split[1], typ, Convert.ToByte(split[3], 16), Convert.ToByte(split[4], 16)));
+                    cmdList.Add(new CmdInfo(split[0], split[1], typ, Convert.ToByte(split[3], 16), Convert.ToByte(split[4], 16), ""));
                 }
             }
         }
 
         public static CmdInfo GetInfo(string name)
         {
-            return cmdList.FirstOrDefault(element => element.name == name);
+            var obj = cmdList.FirstOrDefault(element => element.name == name);
+            if (obj == null) return null;
+            return obj.Clone();
         }
 
         public static CmdInfo GetInfo(int opcode)
         {
-            return cmdList.FirstOrDefault(element => element.opcode == opcode);
+            var obj = cmdList.FirstOrDefault(element => element.opcode == opcode);
+            if (obj == null) return null;
+            return obj.Clone();
         }
     }
 }

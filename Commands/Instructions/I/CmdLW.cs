@@ -37,13 +37,13 @@ namespace MipsCounter.Commands.Instructions.I
                 }
                 else
                 {
-                     regs.Registers[rt] = memory.CmdLoadWord(rs + immediate);
+                    regs.Registers[rt] = memory.CmdLoadWord(regs.Registers[rs] + immediate);
                 }
                
             }
             else if (info.name == "sw")
             {
-                memory.CmdSaveWord(rs + immediate, rt);
+                memory.CmdSaveWord(regs.Registers[rs] + immediate, regs.Registers[rt]);
             }
            
            

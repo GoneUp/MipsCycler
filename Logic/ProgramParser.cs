@@ -79,17 +79,15 @@ namespace MipsCounter.Logic
                         cmds.Add(new CmdBubble(lineLabel));
                     continue;
                 }
-                var name = nameMatch.Value;
 
-
-                var info = CommandList.GetInfo(name);
-
+                var info = CommandList.GetInfo(nameMatch.Value);
                 if (info == null)
                 {
                     Console.WriteLine("Unkown cmd {0}", line);
                     continue;
                 }
 
+                info.inputLine = instruction;
                 ICmdFormatter formatter = null;
                 switch (info.type)
                 {
